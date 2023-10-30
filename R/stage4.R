@@ -64,9 +64,9 @@ clstr2_calc <- function(ps) {
       " -- skipping cluster^2"
     )
   }
-  info(lvl = 1, ps = ps, "Dropping all clusters of < 3 sqs ...")
+  info(lvl = 1, ps = ps, "Dropping all clusters of < 1 sqs ...")
   nsqs <- vapply(all_clstrs, function(x) length(x@sids), 1L)
-  all_clstrs <- all_clstrs[nsqs >= 3]
+  all_clstrs <- all_clstrs[nsqs >= 1]
   info(lvl = 1, ps = ps, "Renumbering clusters ...")
   # returns cluster record box
   all_clstrs <- clstrs_renumber(clstrrecs = all_clstrs)
